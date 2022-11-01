@@ -205,10 +205,10 @@ body {
   color: #333;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-image: url(/igmonopoly/img/8c85e2dc46c33b823c3a64462e16f934.webp);
+  background-image: url(../../igmonopoly/img/8c85e2dc46c33b823c3a64462e16f934.webp);
 }
 .no-webp body {
-  background-image: url(/igmonopoly/img/e40b237e170f5df403b0db0a1e9c50dc.jpg);
+  background-image: url(../../igmonopoly/img/e40b237e170f5df403b0db0a1e9c50dc.jpg);
 }
 .btn-back {
   top: 0.76rem !important;
@@ -618,10 +618,10 @@ body {
   background-image: url(/vi_igmonopoly/img/510481a0a359ae78b4ce9ae1e241937d.png);
 }
 #db-content .chess-shadow {
-  background-image: url(/igmonopoly/img/8f087cf40a91713b13f92dc010b03531.webp);
+  background-image: url(../../igmonopoly/img/8f087cf40a91713b13f92dc010b03531.webp);
 }
 .no-webp #db-content .chess-shadow {
-  background-image: url(/igmonopoly/img/c9baeb2d9da3cccc81f5b7a9f5de0ae8.png);
+  background-image: url(../../igmonopoly/img/c9baeb2d9da3cccc81f5b7a9f5de0ae8.png);
 }
 #db-content .chess-1 {
   background-image: url(/vi_igmonopoly/img/chess1.webp);
@@ -630,40 +630,40 @@ body {
   background-image: url(/vi_igmonopoly/img/662e32ef7eb9a2e843bef82a71cee249.png);
 }
 #db-content .chess-2 {
-  background-image: url(/igmonopoly/img/77eda86d6d527721267d8ef6dbb38188.webp);
+  background-image: url(../../igmonopoly/img/77eda86d6d527721267d8ef6dbb38188.webp);
 }
 .no-webp #db-content .chess-2 {
-  background-image: url(/igmonopoly/img/eaec897eb3c4eb16be3ed29ac744daac.png);
+  background-image: url(../../igmonopoly/img/eaec897eb3c4eb16be3ed29ac744daac.png);
 }
 #db-content .chess-3 {
-  background-image: url(/igmonopoly/img/1b4a58018a6a4ee2839ed6e4d8f3e4fe.webp);
+  background-image: url(../../igmonopoly/img/1b4a58018a6a4ee2839ed6e4d8f3e4fe.webp);
 }
 .no-webp #db-content .chess-3 {
-  background-image: url(/igmonopoly/img/2f0dbb51d20d526eaf0b870593e83415.png);
+  background-image: url(../../igmonopoly/img/2f0dbb51d20d526eaf0b870593e83415.png);
 }
 #db-content .chess-4 {
-  background-image: url(/igmonopoly/img/642b1840486773e2859e227b7da76ca1.webp);
+  background-image: url(../../igmonopoly/img/642b1840486773e2859e227b7da76ca1.webp);
 }
 .no-webp #db-content .chess-4 {
-  background-image: url(/igmonopoly/img/d64c2a4eab330cac20873528b6380e22.png);
+  background-image: url(../../igmonopoly/img/d64c2a4eab330cac20873528b6380e22.png);
 }
 #db-content .prize-1 {
-  background-image: url(/igmonopoly/img/e847a8c5dc3ce1f792ed75f5f9d777b4.webp);
+  background-image: url(../../igmonopoly/img/e847a8c5dc3ce1f792ed75f5f9d777b4.webp);
 }
 .no-webp #db-content .prize-1 {
-  background-image: url(/igmonopoly/img/0098da1f5319666a7ba9ba881049533a.png);
+  background-image: url(../../igmonopoly/img/0098da1f5319666a7ba9ba881049533a.png);
 }
 #db-content .prize-2 {
-  background-image: url(/igmonopoly/img/8fbe6931719bfd67e24b7f0332df62b9.webp);
+  background-image: url(../../igmonopoly/img/8fbe6931719bfd67e24b7f0332df62b9.webp);
 }
 .no-webp #db-content .prize-2 {
-  background-image: url(/igmonopoly/img/a17cf7821794ab04ec7a48645e3224d0.png);
+  background-image: url(../../igmonopoly/img/a17cf7821794ab04ec7a48645e3224d0.png);
 }
 #db-content .prize-3 {
-  background-image: url(/igmonopoly/img/458bea473a456e9de55d3357583e1076.webp);
+  background-image: url(../../igmonopoly/img/458bea473a456e9de55d3357583e1076.webp);
 }
 .no-webp #db-content .prize-3 {
-  background-image: url(/igmonopoly/img/7900f2ccec87a31d5249fbe038e5244b.png);
+  background-image: url(../../igmonopoly/img/7900f2ccec87a31d5249fbe038e5244b.png);
 }
 #db-content .prize-4 {
   background-image: url(/vi_igmonopoly/img/red_page.webp);
@@ -678,10 +678,10 @@ body {
   background-image: url(/vi_igmonopoly/img/f472552c11216795ac4aa5ff7a1b4307.png);
 }
 #db-content .prize-6 {
-  background-image: url(/igmonopoly/img/ef566c88805dc6e944e63f1286e2b846.webp);
+  background-image: url(../../igmonopoly/img/ef566c88805dc6e944e63f1286e2b846.webp);
 }
 .no-webp #db-content .prize-6 {
-  background-image: url(/igmonopoly/img/7bd4cc55780db346cf724ecb4a35b116.png);
+  background-image: url(../../igmonopoly/img/7bd4cc55780db346cf724ecb4a35b116.png);
 }
 #db-content .prize-7 {
   background-image: url(/vi_igmonopoly/img/500k.webp);
@@ -690,22 +690,22 @@ body {
   background-image: url(/vi_igmonopoly/img/0bb465ef72b4e6606d5a1deba17c32be.png);
 }
 #db-content .people {
-  background-image: url(/igmonopoly/img/81f7062bbe98bd6f4bcdf26da7e3e679.webp);
+  background-image: url(../../igmonopoly/img/81f7062bbe98bd6f4bcdf26da7e3e679.webp);
 }
 .no-webp #db-content .people {
-  background-image: url(/igmonopoly/img/249db67d72f3ae37e991b1da3553f0e0.png);
+  background-image: url(../../igmonopoly/img/249db67d72f3ae37e991b1da3553f0e0.png);
 }
 #db-content .shaizi {
-  background-image: url(/igmonopoly/img/9fec521a9e35fb2ede717b2d4bf1dce1.webp);
+  background-image: url(../../igmonopoly/img/9fec521a9e35fb2ede717b2d4bf1dce1.webp);
 }
 .no-webp #db-content .shaizi {
-  background-image: url(/igmonopoly/img/39ce2356ddb952d8bb9c5846de95f18a.png);
+  background-image: url(../../igmonopoly/img/39ce2356ddb952d8bb9c5846de95f18a.png);
 }
 #db-content .shaizi-bg {
-  background-image: url(/igmonopoly/img/972ee3e077267f01d8288266bf124ee3.webp);
+  background-image: url(../../igmonopoly/img/972ee3e077267f01d8288266bf124ee3.webp);
 }
 .no-webp #db-content .shaizi-bg {
-  background-image: url(/igmonopoly/img/5425bf027744f53cd8ca6f0ac2a1701d.png);
+  background-image: url(../../igmonopoly/img/5425bf027744f53cd8ca6f0ac2a1701d.png);
 }
 #db-content .start {
   background-image: url(/vi_igmonopoly/img/start.webp);
@@ -714,58 +714,58 @@ body {
   background-image: url(/vi_igmonopoly/img/6c68d3c61202c2ba9270d7b1969aabf9.png);
 }
 #db-content .boat-1 {
-  background-image: url(/igmonopoly/img/f305aa9b762e3227184a5294a4aa9169.webp);background-size: cover;
+  background-image: url(../../igmonopoly/img/f305aa9b762e3227184a5294a4aa9169.webp);background-size: cover;
 }
 .no-webp #db-content .boat-1 {
-  background-image: url(/igmonopoly/img/1a7980d4c8cf76382251cdc33ef50abe.png);background-size: cover;
+  background-image: url(../../igmonopoly/img/1a7980d4c8cf76382251cdc33ef50abe.png);background-size: cover;
 }
 #db-content .boat-2 {
-  background-image: url(/igmonopoly/img/2d2ae34de47590dd6c53e7b603bbb9db.webp);background-size: cover;
+  background-image: url(../../igmonopoly/img/2d2ae34de47590dd6c53e7b603bbb9db.webp);background-size: cover;
 }
 .no-webp #db-content .boat-2 {
-  background-image: url(/igmonopoly/img/465385e893c8126204fdfa7947233a77.png);background-size: cover;
+  background-image: url(../../igmonopoly/img/465385e893c8126204fdfa7947233a77.png);background-size: cover;
 }
 #db-content .boat-3 {
-  background-image: url(/igmonopoly/img/d299c2ef3afad39bdff45d88273b271f.webp);background-size: cover;
+  background-image: url(../../igmonopoly/img/d299c2ef3afad39bdff45d88273b271f.webp);background-size: cover;
 }
 .no-webp #db-content .boat-3 {
-  background-image: url(/igmonopoly/img/7215b5e2e1a8d21cd5d4ce1c285f0747.png);background-size: cover;
+  background-image: url(../../igmonopoly/img/7215b5e2e1a8d21cd5d4ce1c285f0747.png);background-size: cover;
 }
 #db-content .boat-4 {
-  background-image: url(/igmonopoly/img/4599e61faaf9187b32d43081b5d8de50.webp);background-size: cover;
+  background-image: url(../../igmonopoly/img/4599e61faaf9187b32d43081b5d8de50.webp);background-size: cover;
 }
 .no-webp #db-content .boat-4 {
-  background-image: url(/igmonopoly/img/8f4b7c63ff059fee947e7e4609c83491.png);background-size: cover;
+  background-image: url(../../igmonopoly/img/8f4b7c63ff059fee947e7e4609c83491.png);background-size: cover;
 }
 #db-content .hand {
-  background-image: url(/igmonopoly/img/75e0635b7a624ea19f83ba9af3a65078.webp);
+  background-image: url(../../igmonopoly/img/75e0635b7a624ea19f83ba9af3a65078.webp);
 }
 .no-webp #db-content .hand {
-  background-image: url(/igmonopoly/img/378314fb10c1e314c301a4947e345ee7.png);
+  background-image: url(../../igmonopoly/img/378314fb10c1e314c301a4947e345ee7.png);
 }
 #db-content .smoke {
-  background-image: url(/igmonopoly/img/e7dfebe6e743507550995f4ddd022ee9.webp);
+  background-image: url(../../igmonopoly/img/e7dfebe6e743507550995f4ddd022ee9.webp);
 }
 .no-webp #db-content .smoke {
-  background-image: url(/igmonopoly/img/19cfd0eb0d602101c6acf061065bdd2d.png);
+  background-image: url(../../igmonopoly/img/19cfd0eb0d602101c6acf061065bdd2d.png);
 }
 #db-content .arrow-1 {
-  background-image: url(/igmonopoly/img/65ddf55426d90d5b59679cc0fef966dc.webp);
+  background-image: url(../../igmonopoly/img/65ddf55426d90d5b59679cc0fef966dc.webp);
 }
 .no-webp #db-content .arrow-1 {
-  background-image: url(/igmonopoly/img/713bab0f83afea91d862a2510205a90b.png);
+  background-image: url(../../igmonopoly/img/713bab0f83afea91d862a2510205a90b.png);
 }
 #db-content .arrow-2 {
-  background-image: url(/igmonopoly/img/ac2a8d736c24a86e09cf19be2b5f409a.webp);
+  background-image: url(../../igmonopoly/img/ac2a8d736c24a86e09cf19be2b5f409a.webp);
 }
 .no-webp #db-content .arrow-2 {
-  background-image: url(/igmonopoly/img/4c45ca66772cba5ea346bcb8b74bbcff.png);
+  background-image: url(../../igmonopoly/img/4c45ca66772cba5ea346bcb8b74bbcff.png);
 }
 #db-content .steps-text {
-  background-image: url(/igmonopoly/img/5234ae34c2ab50856d7f835889c93f51.webp);
+  background-image: url(../../igmonopoly/img/5234ae34c2ab50856d7f835889c93f51.webp);
 }
 .no-webp #db-content .steps-text {
-  background-image: url(/igmonopoly/img/303a58b340bb3440cdb80d7d7a0ee5ea.png);
+  background-image: url(../../igmonopoly/img/303a58b340bb3440cdb80d7d7a0ee5ea.png);
 }
 @-webkit-keyframes frameAniTb {
   to {
