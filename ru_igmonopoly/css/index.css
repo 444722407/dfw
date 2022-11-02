@@ -1,0 +1,954 @@
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 640px;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  overflow: hidden;
+}
+[ga-data] > * {
+  pointer-events: none;
+}
+.loading_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  display: none;
+  background-color: #fff;
+}
+.loading_container .circular_spinner {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
+.loading_container .circular_spinner .circular {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  -webkit-animation: loading-rotate 2s linear infinite;
+          animation: loading-rotate 2s linear infinite;
+}
+.loading_container .circular_spinner .path {
+  -webkit-animation: loading-dash 1.5s ease-in-out infinite;
+          animation: loading-dash 1.5s ease-in-out infinite;
+  stroke-dasharray: 80, 120;
+  stroke-dashoffset: 0;
+  stroke-width: 8;
+  stroke: #f66b60;
+  stroke-linecap: round;
+}
+@-webkit-keyframes loading-dash {
+  0% {
+    stroke-dasharray: 0, 120;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 80, 120;
+    stroke-dashoffset: -45;
+  }
+  to {
+    stroke-dasharray: 40, 160;
+    stroke-dashoffset: -120;
+  }
+}
+@keyframes loading-dash {
+  0% {
+    stroke-dasharray: 0, 120;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 80, 120;
+    stroke-dashoffset: -45;
+  }
+  to {
+    stroke-dasharray: 40, 160;
+    stroke-dashoffset: -120;
+  }
+}
+@-webkit-keyframes loading-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+@keyframes loading-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+.loading_container .circular_loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
+.loading_container .circular_loading .path {
+  fill: #f66b60;
+}
+.loading_container .circular_loading .path.point1 {
+  -webkit-animation: loading-scale 1s cubic-bezier(0.3, 0, 0.7, 1) infinite 0s;
+          animation: loading-scale 1s cubic-bezier(0.3, 0, 0.7, 1) infinite 0s;
+}
+.loading_container .circular_loading .path.point2 {
+  -webkit-animation: loading-scale 1s cubic-bezier(0.3, 0, 0.7, 1) infinite 0.125s;
+          animation: loading-scale 1s cubic-bezier(0.3, 0, 0.7, 1) infinite 0.125s;
+}
+.loading_container .circular_loading .path.point3 {
+  -webkit-animation: loading-scale 1s cubic-bezier(0.3, 0, 0.7, 1) infinite 0.25s;
+          animation: loading-scale 1s cubic-bezier(0.3, 0, 0.7, 1) infinite 0.25s;
+}
+.loading_container .circular_loading .path.point4 {
+  -webkit-animation: loading-scale 1s cubic-bezier(0.3, 0, 0.7, 1) infinite 0.375s;
+          animation: loading-scale 1s cubic-bezier(0.3, 0, 0.7, 1) infinite 0.375s;
+}
+@-webkit-keyframes loading-scale {
+  0% {
+    -webkit-transform: scale3d(0, 0, 1);
+            transform: scale3d(0, 0, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  to {
+    -webkit-transform: scale3d(0, 0, 1);
+            transform: scale3d(0, 0, 1);
+  }
+}
+@keyframes loading-scale {
+  0% {
+    -webkit-transform: scale3d(0, 0, 1);
+            transform: scale3d(0, 0, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  to {
+    -webkit-transform: scale3d(0, 0, 1);
+            transform: scale3d(0, 0, 1);
+  }
+}
+.refresh {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  background: #fff;
+  width: 4.6rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.32rem;
+  text-align: center;
+  border-radius: 4px;
+  color: #413297;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+.refresh:active {
+  background: rgba(255, 255, 255, 0.6);
+}
+.hide {
+  display: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+body,
+html {
+  margin: 0 auto;
+  max-width: 640px;
+  background-color: #f6d991;
+  height: 100%;
+}
+body {
+  position: relative;
+  font-size: 0;
+  line-height: 1;
+  overflow-x: hidden;
+  max-width: 10rem;
+  margin: 0 auto;
+  color: #333;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url(../../igmonopoly/img/8c85e2dc46c33b823c3a64462e16f934.webp);
+}
+.no-webp body {
+  background-image: url(../../igmonopoly/img/e40b237e170f5df403b0db0a1e9c50dc.jpg);
+}
+.btn-back {
+  top: 0.76rem !important;
+}
+.container {
+  height: 100%;
+}
+.chess {
+  width: 10rem;
+  height: 13.33333437rem;
+  position: absolute;
+  left: 0;
+  top: 1.6rem;
+}
+.chess .prize-1 {
+  width: 2.13333438rem;
+  height: 2.28rem;
+  left: 2.2rem;
+  top: 9rem;
+  -webkit-animation-delay: 0.63s;
+          animation-delay: 0.63s;
+}
+.chess .prize-2 {
+  width: 1.66666563rem;
+  height: 1.92rem;
+  left: 0.26666563rem;
+  top: 6.13333437rem;
+}
+.chess .prize-3 {
+  width: 1.8rem;
+  height: 1.73333438rem;
+  left: 0.13333438rem;
+  top: 3.86666562rem;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.chess .prize-4 {
+  width: 1.74666563rem;
+  height: 1.66666563rem;
+  left: 3.6rem;
+  top: 1.86666563rem;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.chess .prize-5 {
+  width: 1.56rem;
+  height: 1.76rem;
+  left: 6.93333437rem;
+  top: 3.86666562rem;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+.chess .prize-6 {
+  width: 1.74666563rem;
+  height: 1.04rem;
+  left: 7rem;
+  top: 7.13333438rem;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.chess .prize-7 {
+  width: 2.21333438rem;
+  height: 2.30666562rem;
+  left: 4.4rem;
+  top: 7rem;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+.chess .arrow-1 {
+  left: 0.96rem;
+  top: 3.53333438rem;
+}
+.chess .arrow-2 {
+  position: absolute;
+  left: 6.4rem;
+  top: 4.2rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+}
+.chess .prize-1,
+.chess .prize-2,
+.chess .prize-3,
+.chess .prize-4,
+.chess .prize-5,
+.chess .prize-6,
+.chess .prize-7,
+.chess .arrow-1 {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  position: absolute;
+}
+.chess .arrow-1,
+.chess .arrow-2 {
+  width: 0.73333438rem;
+  height: 0.44rem;
+  background-position-y: 0;
+  opacity: 0;
+  -webkit-animation: frameFadeIn 0.1s linear 0.6s 1 forwards, frameAniTb 1s steps(3) 0.7s infinite;
+          animation: frameFadeIn 0.1s linear 0.6s 1 forwards, frameAniTb 1s steps(3) 0.7s infinite;
+}
+.chess .people {
+  width: 1.32rem;
+  height: 1.84rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+.chess .people.shake {
+  -webkit-animation: peopleShake 0.3s ease-out 0s infinite;
+          animation: peopleShake 0.3s ease-out 0s infinite;
+}
+.chess .smoke.show {
+  width: 4rem;
+  height: 4rem;
+  background-size: 100% auto;
+  background-position-y: 0;
+  position: absolute;
+  -webkit-animation: frameAniTb 0.6s steps(14) 0s 1 forwards;
+          animation: frameAniTb 0.6s steps(14) 0s 1 forwards;
+}
+.chess .chess-shadow {
+  width: 10rem;
+  height: 13.33333437rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-animation: frameFadeIn 0.2s linear 0.7s 1 forwards;
+          animation: frameFadeIn 0.2s linear 0.7s 1 forwards;
+}
+.chess .chess-1 {
+  width: 3.14666563rem;
+  height: 3.94666563rem;
+  top: 6.4rem;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.chess .chess-2 {
+  width: 5.34666562rem;
+  height: 4.56rem;
+  top: 2.6rem;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.chess .chess-3 {
+  width: 4.17333437rem;
+  height: 3.38666563rem;
+  left: 4.66666563rem;
+  top: 3.2rem;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.chess .chess-4 {
+  width: 6.45333437rem;
+  height: 4.52rem;
+  left: 3.46666562rem;
+  top: 5.86666562rem;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.chess .chess-1,
+.chess .chess-2 {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  position: absolute;
+  left: 0.13333438rem;
+}
+.chess .chess-3,
+.chess .chess-4 {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  position: absolute;
+}
+.chess.ani .chess-1,
+.chess.ani .chess-2,
+.chess.ani .chess-3,
+.chess.ani .chess-4,
+.chess.ani .people,
+.chess.ani [class*="prize-"] {
+  -webkit-transform: translateY(-13.33333437rem);
+          transform: translateY(-13.33333437rem);
+  -webkit-animation-name: frameFadeDown;
+          animation-name: frameFadeDown;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.chess.ani .chess-1,
+.chess.ani .chess-2,
+.chess.ani .chess-3,
+.chess.ani .chess-4 {
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+}
+.chess.ani .people,
+.chess.ani [class*="prize-"] {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+.chess.ani .prize-2 {
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  -webkit-animation: frameFadeDown 0.2s linear 0.4s 1 forwards, prize2Jump 1.6s linear 0.6s infinite;
+          animation: frameFadeDown 0.2s linear 0.4s 1 forwards, prize2Jump 1.6s linear 0.6s infinite;
+}
+.dizuo {
+  width: 10rem;
+  height: 4rem;
+  position: absolute;
+  left: 0;
+  top: 12.66666563rem;
+}
+.dizuo .shaizi-bg {
+  width: 2.94666563rem;
+  height: 2.94666563rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  overflow: visible;
+  position: absolute;
+  left: 3.52666563rem;
+  top: 0;
+}
+.dizuo .shaizi-bg .shaizi {
+  position: absolute;
+  left: 0.24666563rem;
+  top: 0.13333438rem;
+  width: 2.45333437rem;
+  height: 2.45333437rem;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  background-size: 100% auto;
+}
+.dizuo .shaizi-bg .shaizi.shaizi-move {
+  -webkit-animation: frameAniTb 1s steps(5) 0s infinite, shaiziRotate 0.6s linear 0s 1 forwards;
+          animation: frameAniTb 1s steps(5) 0s infinite, shaiziRotate 0.6s linear 0s 1 forwards;
+}
+.dizuo .shaizi-bg .shaizi[class*="dian-"] {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-transform: translateY(-8rem);
+          transform: translateY(-8rem);
+}
+.dizuo .shaizi-bg .shaizi.dian-1 {
+  background-position-y: 0;
+}
+.dizuo .shaizi-bg .shaizi.dian-2 {
+  background-position-y: 12.26666562rem;
+}
+.dizuo .shaizi-bg .shaizi.dian-3 {
+  background-position-y: 9.81333438rem;
+}
+.dizuo .shaizi-bg .shaizi.dian-4 {
+  background-position-y: 7.36rem;
+}
+.dizuo .shaizi-bg .shaizi.dian-5 {
+  background-position-y: 4.90666562rem;
+}
+.dizuo .shaizi-bg .shaizi.dian-6 {
+  background-position-y: 2.45333437rem;
+}
+.dizuo .start {
+  width: 3.66666562rem;
+  height: 1.76rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  background-position-x: 0;
+  position: absolute;
+  left: 3.16666563rem;
+  top: 2.13333438rem;
+}
+.dizuo .start.down {
+  background-position-y: 50%;
+}
+.dizuo .start.disable {
+  background-position-y: 100%;
+}
+.dizuo .hand.show {
+  width: 2.41333438rem;
+  height: 2.42666563rem;
+  -webkit-animation: handGuideMove 0.5s ease-out 0s infinite;
+          animation: handGuideMove 0.5s ease-out 0s infinite;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  -webkit-transform-origin: 80% 90%;
+          transform-origin: 80% 90%;
+  position: absolute;
+  left: 6.26666562rem;
+  top: 2.13333438rem;
+  pointer-events: none;
+}
+.dizuo .times {
+  font-size: 0.32rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  width: 10rem;
+  position: absolute;
+  left: 0;
+  top: 3.6rem;
+  text-align: center;
+}
+.boats {
+  width: 10rem;
+  height: 10.66666563rem;
+  position: absolute;
+  left: 0;
+  top: 10.74666563rem;
+  -webkit-animation: boatsRTL 20s linear 0s infinite;
+          animation: boatsRTL 20s linear 0s infinite;
+}
+.boats .boat-1,
+.boats .boad-2,
+.boats .boad-3,
+.boats .boad-4 {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+}
+.boats .boat-1 {
+  width: 1.64rem;
+  height: 1.29333438rem;
+  position: absolute;
+  left: 0.66666563rem;
+  top: 2.4rem;
+}
+.boats .boat-2 {
+  width: 2.09333437rem;
+  height: 1.53333438rem;
+  position: absolute;
+  left: 7.33333437rem;
+  top: 0.53333438rem;
+}
+.boats .boat-3 {
+  width: 0.96rem;
+  height: 0.96rem;
+  position: absolute;
+  left: 2.6rem;
+  top: 8.4rem;
+}
+.boats .boat-4 {
+  width: 1.13333438rem;
+  height: 1.05333438rem;
+  position: absolute;
+  left: 7.86666562rem;
+  top: 5.49333437rem;
+}
+#db-content {
+  position: relative;
+  width: 10rem;
+  height: 21.41333438rem;
+  overflow: hidden;
+  display: block !important;
+}
+#db-content .steps-text {
+  width: 8rem;
+  left: 1rem;
+  top: 6.93333437rem;
+  font-size: 0.74666563rem;
+  height: 1.46666563rem;
+  line-height: 1.46666563rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.13333438rem;
+  display: none;
+}
+#db-content .banner {
+  width: 10rem;
+  height: 3.13333438rem;
+  left: 0;
+  top: 0.26666563rem;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: frameScale 0.4s ease-in 0.7s 1 forwards;
+          animation: frameScale 0.4s ease-in 0.7s 1 forwards;
+}
+#db-content .banner,
+#db-content .steps-text {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  position: absolute;
+}
+#db-content .times {
+  color: #01519b;
+}
+#db-content .banner {
+  background-image: url(../../vi_igmonopoly/img/title.webp);
+}
+.no-webp #db-content .banner {
+  background-image: url(../../vi_igmonopoly/img/510481a0a359ae78b4ce9ae1e241937d.png);
+}
+#db-content .chess-shadow {
+  background-image: url(../../igmonopoly/img/8f087cf40a91713b13f92dc010b03531.webp);
+}
+.no-webp #db-content .chess-shadow {
+  background-image: url(../../igmonopoly/img/c9baeb2d9da3cccc81f5b7a9f5de0ae8.png);
+}
+#db-content .chess-1 {
+  background-image: url(../../vi_igmonopoly/img/chess1.webp);
+}
+.no-webp #db-content .chess-1 {
+  background-image: url(../../vi_igmonopoly/img/662e32ef7eb9a2e843bef82a71cee249.png);
+}
+#db-content .chess-2 {
+  background-image: url(../../igmonopoly/img/77eda86d6d527721267d8ef6dbb38188.webp);
+}
+.no-webp #db-content .chess-2 {
+  background-image: url(../../igmonopoly/img/eaec897eb3c4eb16be3ed29ac744daac.png);
+}
+#db-content .chess-3 {
+  background-image: url(../../igmonopoly/img/1b4a58018a6a4ee2839ed6e4d8f3e4fe.webp);
+}
+.no-webp #db-content .chess-3 {
+  background-image: url(../../igmonopoly/img/2f0dbb51d20d526eaf0b870593e83415.png);
+}
+#db-content .chess-4 {
+  background-image: url(../../igmonopoly/img/642b1840486773e2859e227b7da76ca1.webp);
+}
+.no-webp #db-content .chess-4 {
+  background-image: url(../../igmonopoly/img/d64c2a4eab330cac20873528b6380e22.png);
+}
+#db-content .prize-1 {
+  background-image: url(../../igmonopoly/img/e847a8c5dc3ce1f792ed75f5f9d777b4.webp);
+}
+.no-webp #db-content .prize-1 {
+  background-image: url(../../igmonopoly/img/0098da1f5319666a7ba9ba881049533a.png);
+}
+#db-content .prize-2 {
+  background-image: url(../../igmonopoly/img/8fbe6931719bfd67e24b7f0332df62b9.webp);
+}
+.no-webp #db-content .prize-2 {
+  background-image: url(../../igmonopoly/img/a17cf7821794ab04ec7a48645e3224d0.png);
+}
+#db-content .prize-3 {
+  background-image: url(../../igmonopoly/img/458bea473a456e9de55d3357583e1076.webp);
+}
+.no-webp #db-content .prize-3 {
+  background-image: url(../../igmonopoly/img/7900f2ccec87a31d5249fbe038e5244b.png);
+}
+#db-content .prize-4 {
+  background-image: url(../../vi_igmonopoly/img/red_page.webp);
+}
+.no-webp #db-content .prize-4 {
+  background-image: url(../../vi_igmonopoly/img/167c397aaa7f7c701e39f6fff71fdf9c.png);
+}
+#db-content .prize-5 {
+  background-image: url(../../vi_igmonopoly/img/prize5.webp);
+}
+.no-webp #db-content .prize-5 {
+  background-image: url(../../vi_igmonopoly/img/f472552c11216795ac4aa5ff7a1b4307.png);
+}
+#db-content .prize-6 {
+  background-image: url(../../igmonopoly/img/ef566c88805dc6e944e63f1286e2b846.webp);
+}
+.no-webp #db-content .prize-6 {
+  background-image: url(../../igmonopoly/img/7bd4cc55780db346cf724ecb4a35b116.png);
+}
+#db-content .prize-7 {
+  background-image: url(../../vi_igmonopoly/img/500k.webp);
+}
+.no-webp #db-content .prize-7 {
+  background-image: url(../../vi_igmonopoly/img/0bb465ef72b4e6606d5a1deba17c32be.png);
+}
+#db-content .people {
+  background-image: url(../../igmonopoly/img/81f7062bbe98bd6f4bcdf26da7e3e679.webp);
+}
+.no-webp #db-content .people {
+  background-image: url(../../igmonopoly/img/249db67d72f3ae37e991b1da3553f0e0.png);
+}
+#db-content .shaizi {
+  background-image: url(../../igmonopoly/img/9fec521a9e35fb2ede717b2d4bf1dce1.webp);
+}
+.no-webp #db-content .shaizi {
+  background-image: url(../../igmonopoly/img/39ce2356ddb952d8bb9c5846de95f18a.png);
+}
+#db-content .shaizi-bg {
+  background-image: url(../../igmonopoly/img/972ee3e077267f01d8288266bf124ee3.webp);
+}
+.no-webp #db-content .shaizi-bg {
+  background-image: url(../../igmonopoly/img/5425bf027744f53cd8ca6f0ac2a1701d.png);
+}
+#db-content .start {
+  background-image: url(../../vi_igmonopoly/img/start.webp);
+}
+.no-webp #db-content .start {
+  background-image: url(../../vi_igmonopoly/img/6c68d3c61202c2ba9270d7b1969aabf9.png);
+}
+#db-content .boat-1 {
+  background-image: url(../../igmonopoly/img/f305aa9b762e3227184a5294a4aa9169.webp);background-size: cover;
+}
+.no-webp #db-content .boat-1 {
+  background-image: url(../../igmonopoly/img/1a7980d4c8cf76382251cdc33ef50abe.png);background-size: cover;
+}
+#db-content .boat-2 {
+  background-image: url(../../igmonopoly/img/2d2ae34de47590dd6c53e7b603bbb9db.webp);background-size: cover;
+}
+.no-webp #db-content .boat-2 {
+  background-image: url(../../igmonopoly/img/465385e893c8126204fdfa7947233a77.png);background-size: cover;
+}
+#db-content .boat-3 {
+  background-image: url(../../igmonopoly/img/d299c2ef3afad39bdff45d88273b271f.webp);background-size: cover;
+}
+.no-webp #db-content .boat-3 {
+  background-image: url(../../igmonopoly/img/7215b5e2e1a8d21cd5d4ce1c285f0747.png);background-size: cover;
+}
+#db-content .boat-4 {
+  background-image: url(../../igmonopoly/img/4599e61faaf9187b32d43081b5d8de50.webp);background-size: cover;
+}
+.no-webp #db-content .boat-4 {
+  background-image: url(../../igmonopoly/img/8f4b7c63ff059fee947e7e4609c83491.png);background-size: cover;
+}
+#db-content .hand {
+  background-image: url(../../igmonopoly/img/75e0635b7a624ea19f83ba9af3a65078.webp);
+}
+.no-webp #db-content .hand {
+  background-image: url(../../igmonopoly/img/378314fb10c1e314c301a4947e345ee7.png);
+}
+#db-content .smoke {
+  background-image: url(../../igmonopoly/img/e7dfebe6e743507550995f4ddd022ee9.webp);
+}
+.no-webp #db-content .smoke {
+  background-image: url(../../igmonopoly/img/19cfd0eb0d602101c6acf061065bdd2d.png);
+}
+#db-content .arrow-1 {
+  background-image: url(../../igmonopoly/img/65ddf55426d90d5b59679cc0fef966dc.webp);
+}
+.no-webp #db-content .arrow-1 {
+  background-image: url(../../igmonopoly/img/713bab0f83afea91d862a2510205a90b.png);
+}
+#db-content .arrow-2 {
+  background-image: url(../../igmonopoly/img/ac2a8d736c24a86e09cf19be2b5f409a.webp);
+}
+.no-webp #db-content .arrow-2 {
+  background-image: url(../../igmonopoly/img/4c45ca66772cba5ea346bcb8b74bbcff.png);
+}
+#db-content .steps-text {
+  background-image: url(../../igmonopoly/img/5234ae34c2ab50856d7f835889c93f51.webp);
+}
+.no-webp #db-content .steps-text {
+  background-image: url(../../igmonopoly/img/303a58b340bb3440cdb80d7d7a0ee5ea.png);
+}
+@-webkit-keyframes frameAniTb {
+  to {
+    background-position-y: 100%;
+  }
+}
+@keyframes frameAniTb {
+  to {
+    background-position-y: 100%;
+  }
+}
+@-webkit-keyframes peopleShake {
+  0%,
+  to {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  50% {
+    -webkit-transform: rotateX(45deg);
+            transform: rotateX(45deg);
+  }
+}
+@keyframes peopleShake {
+  0%,
+  to {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  50% {
+    -webkit-transform: rotateX(45deg);
+            transform: rotateX(45deg);
+  }
+}
+@-webkit-keyframes frameFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes frameFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes frameFadeDown {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes frameFadeDown {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes prize2Jump {
+  0%,
+  50%,
+  to {
+    -webkit-transform: translateY(0) rotateX(0);
+            transform: translateY(0) rotateX(0);
+  }
+  75% {
+    -webkit-transform: translateY(-0.26666562rem) rotateX(15deg);
+            transform: translateY(-0.26666562rem) rotateX(15deg);
+  }
+}
+@keyframes prize2Jump {
+  0%,
+  50%,
+  to {
+    -webkit-transform: translateY(0) rotateX(0);
+            transform: translateY(0) rotateX(0);
+  }
+  75% {
+    -webkit-transform: translateY(-0.26666562rem) rotateX(15deg);
+            transform: translateY(-0.26666562rem) rotateX(15deg);
+  }
+}
+@-webkit-keyframes handGuideMove {
+  0%,
+  to {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+@keyframes handGuideMove {
+  0%,
+  to {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+@-webkit-keyframes shaiziRotate {
+  20% {
+    -webkit-transform: translate3d(0, -6.4rem, 0) rotate(120deg);
+            transform: translate3d(0, -6.4rem, 0) rotate(120deg);
+  }
+  40% {
+    -webkit-transform: translate3d(-3.33333438rem, -4rem, 0) rotate(240deg);
+            transform: translate3d(-3.33333438rem, -4rem, 0) rotate(240deg);
+  }
+  60% {
+    -webkit-transform: translate3d(1.33333438rem, -3.6rem, 0) rotate(1turn);
+            transform: translate3d(1.33333438rem, -3.6rem, 0) rotate(1turn);
+  }
+  80% {
+    -webkit-transform: translate3d(3.33333438rem, -4.8rem, 0) rotate(480deg);
+            transform: translate3d(3.33333438rem, -4.8rem, 0) rotate(480deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, -8rem, 0) rotate(600deg);
+            transform: translate3d(0, -8rem, 0) rotate(600deg);
+  }
+}
+@keyframes shaiziRotate {
+  20% {
+    -webkit-transform: translate3d(0, -6.4rem, 0) rotate(120deg);
+            transform: translate3d(0, -6.4rem, 0) rotate(120deg);
+  }
+  40% {
+    -webkit-transform: translate3d(-3.33333438rem, -4rem, 0) rotate(240deg);
+            transform: translate3d(-3.33333438rem, -4rem, 0) rotate(240deg);
+  }
+  60% {
+    -webkit-transform: translate3d(1.33333438rem, -3.6rem, 0) rotate(1turn);
+            transform: translate3d(1.33333438rem, -3.6rem, 0) rotate(1turn);
+  }
+  80% {
+    -webkit-transform: translate3d(3.33333438rem, -4.8rem, 0) rotate(480deg);
+            transform: translate3d(3.33333438rem, -4.8rem, 0) rotate(480deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, -8rem, 0) rotate(600deg);
+            transform: translate3d(0, -8rem, 0) rotate(600deg);
+  }
+}
+@-webkit-keyframes boatsRTL {
+  0% {
+    left: 10rem;
+    top: 7.33333437rem;
+  }
+  to {
+    left: -10rem;
+    top: 14.66666563rem;
+  }
+}
+@keyframes boatsRTL {
+  0% {
+    left: 10rem;
+    top: 7.33333437rem;
+  }
+  to {
+    left: -10rem;
+    top: 14.66666563rem;
+  }
+}
+@-webkit-keyframes frameScale {
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes frameScale {
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+

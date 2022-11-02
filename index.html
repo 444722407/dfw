@@ -10,27 +10,41 @@
   <link rel="icon" href="/favicon.ico">
   <title></title>
   <style>
-    body {
-      background: #f6d991
-    }
-
-    .container {
-      display: none
-    }
-
-    .refresh {
-      display: none
-    }
-
-    .initLoading {
-      display: block;
-      width: 100px;
-      height: 100px;
+    .mask{
+      display: none;
       position: fixed;
-      top: 50%;
+      top: 0;left: 0;
+      background-color: rgba(0, 0, 0, .7);
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+    }
+    .mask_body{
+      display: none;
+      width: 8.5333rem;
+      position:fixed;
       left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 99;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 99999;
+    }
+    .mask_body .ad_img{
+      width: 100%;display: block;
+    }
+    .mask_body .tips{
+      border: 1px solid #eee;
+      position: fixed;
+      top:-1.1rem;
+      left: 0;
+      color: #fff;
+      padding: 4px;
+      font-size: 16px;
+      border-radius: 1px;
+    }
+    .mask_body .close{
+      position: fixed;
+      right: 0;
+      top:-1.2rem;
     }
   </style>
   <script>(function (win, lib) { var doc = win.document; var docEl = doc.documentElement; var metaEl = doc.querySelector('meta[name="viewport"]'); var flexibleEl = doc.querySelector('meta[name="flexible"]'); var dpr = 0; var scale = 0; var tid; var flexible = lib.flexible || (lib.flexible = {}); if (metaEl) { console.warn("将根据已有的meta标签来设置缩放比例"); var match = metaEl.getAttribute("content").match(/initial\-scale=([\d\.]+)/); if (match) { scale = parseFloat(match[1]); dpr = parseInt(1 / scale) } } else { if (flexibleEl) { var content = flexibleEl.getAttribute("content"); if (content) { var initialDpr = content.match(/initial\-dpr=([\d\.]+)/); var maximumDpr = content.match(/maximum\-dpr=([\d\.]+)/); if (initialDpr) { dpr = parseFloat(initialDpr[1]); scale = parseFloat((1 / dpr).toFixed(2)) } if (maximumDpr) { dpr = parseFloat(maximumDpr[1]); scale = parseFloat((1 / dpr).toFixed(2)) } } } } if (!dpr && !scale) { var isAndroid = win.navigator.appVersion.match(/android/gi); var isIPhone = win.navigator.appVersion.match(/iphone/gi); var devicePixelRatio = win.devicePixelRatio; if (isIPhone) { if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) { dpr = 3 } else { if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) { dpr = 2 } else { dpr = 1 } } } else { dpr = 1 } scale = 1 / dpr } docEl.setAttribute("data-dpr", dpr); if (!metaEl) { metaEl = doc.createElement("meta"); metaEl.setAttribute("name", "viewport"); metaEl.setAttribute("content", "initial-scale=" + scale + ", maximum-scale=" + scale + ", minimum-scale=" + scale + ", user-scalable=no, viewport-fit=cover"); if (docEl.firstElementChild) { docEl.firstElementChild.appendChild(metaEl) } else { var wrap = doc.createElement("div"); wrap.appendChild(metaEl); doc.write(wrap.innerHTML) } } function refreshRem() { var width = docEl.getBoundingClientRect().width; if (width / dpr > 640) { width = 640 * dpr } var rem = width / 10; docEl.style.fontSize = rem + "px"; flexible.rem = win.rem = rem } win.addEventListener("resize", function () { clearTimeout(tid); tid = setTimeout(refreshRem, 300) }, false); win.addEventListener("pageshow", function (e) { if (e.persisted) { clearTimeout(tid); tid = setTimeout(refreshRem, 300) } }, false); if (doc.readyState === "complete") { doc.body.style.fontSize = 12 * dpr + "px" } else { doc.addEventListener("DOMContentLoaded", function (e) { doc.body.style.fontSize = 12 * dpr + "px" }, false) } refreshRem(); flexible.dpr = win.dpr = dpr; flexible.refreshRem = refreshRem; flexible.rem2px = function (d) { var val = parseFloat(d) * this.rem; if (typeof d === "string" && d.match(/rem$/)) { val += "px" } return val }; flexible.px2rem = function (d) { var val = parseFloat(d) / this.rem; if (typeof d === "string" && d.match(/px$/)) { val += "rem" } return val } })(window, window["lib"] || (window["lib"] = {}));</script>
@@ -50,9 +64,10 @@
     // 菲律宾（英语）en
     // 泰国 th
     // 越南 vi
+    // 俄罗斯 ru
     var lang = window.navigator.language;
     var public_match = lang.match(/en|pt|th|vi|id/ig);
-    var publick_link = public_match ? public_match[0] : "vi";
+    var publick_link = public_match ? public_match[0] : "en";
     addSheetFile('./' +  publick_link+'_igmonopoly/css/index.css');
   </script>
 </head>
@@ -63,7 +78,7 @@
       <div class="banner"> </div>
       <div class="chess">
         <div class="chess-shadow"></div>
-        <div class="chess-2"></div>
+        <div class="chess-2"></div> 
         <div class="chess-1"></div>
         <div class="chess-3"></div>
         <div class="chess-4"> </div>
@@ -95,8 +110,21 @@
       </div>
     </div>
   </div>
+  
+  <div class="mask"></div>
+  <div class="mask_body">
+    <div class="tips">AD</div>
+    <div class="close"><?xml version="1.0" encoding="UTF-8"?><svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M29.6567 18.3432L18.343 29.6569" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.3433 18.3432L29.657 29.6569" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <img src="https://fakeimg.pl/750x400/?text=AD" class="ad_img">
+  </div>
+
   <script src="./js/jquery-3.4.1.min.js"></script>
   <script>
+    var is_reward = true;
+    var reward_config = {
+      step: [3,4,3,3,4,2,3],
+      index:0
+    }
     var points = [
       {
         x:57.5,y:295
@@ -171,7 +199,9 @@
       var index = 0;
       var scale = $(window).width() / 375;
       init()
-
+      $('.mask_body').click(function(){
+        $('.mask,.mask_body').fadeOut()
+      })
       function init(){
         $('.people').css({
           top:points[0].y * scale + 'px',
@@ -182,6 +212,7 @@
       function over(){
         $('.people').removeClass('shake');
         // 弹窗
+        $('.mask,.mask_body').fadeIn()
       }
 
       function smoke(x,y){
@@ -197,7 +228,7 @@
       function move (count){
         for(let i=0;i<count;i++){
             setTimeout(function(){
-              index =  (++index) % 22;
+              index =  (++index) % points.length;
               $('.people').addClass('shake');
               $('.people').css({
                 top:points[index].y * scale + 'px',
@@ -208,7 +239,14 @@
       }
 
       $('.dizuo').click(function(){
-        let random = Math.floor(Math.random()*6 +1);
+        let random = 0;
+        if(is_reward){
+          let reward_index = (reward_config.index++) % reward_config.step.length;
+          random = reward_config.step[reward_index];
+          console.log(random)
+        }else{
+          random = Math.floor(Math.random()*6 +1);
+        }
         let className = "dian-" +random; 
         $('.shaizi ').addClass("shaizi-move");
        
